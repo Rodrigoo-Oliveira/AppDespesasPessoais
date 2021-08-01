@@ -33,15 +33,17 @@ class TransactionForm extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                FlatButton(
-                  child: Text('Nova Transação'),
-                  textColor: Colors.purple,
+                TextButton(
+                  child: Text(
+                    'Nova Transação',
+                    style: TextStyle(color: Colors.purple),
+                  ),
                   onPressed: () {
                     final title = titleController.text;
                     final value = double.tryParse(valueController.text) ?? 0.0;
                     onSubmit(title, value);
                   },
-                ),
+                )
               ],
             ),
           ],
