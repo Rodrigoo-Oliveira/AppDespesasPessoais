@@ -12,6 +12,10 @@ class ExpensesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        accentColor: Colors.amber,
+      ),
     );
   }
 }
@@ -48,6 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+
+    Navigator.of(context).pop();
   }
 
   _openTransactionFormModal(BuildContext context) {
@@ -55,8 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (_) {
         return TransactionForm(_addTransaction);
-      },
-    );
+      });
   }
 
   @override
